@@ -1,0 +1,1 @@
+export const http = "https://api.github.com/";
