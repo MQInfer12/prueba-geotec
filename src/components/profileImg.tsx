@@ -13,9 +13,6 @@ const ProfileImg = ({ id, url, size }: Props) => {
       alt={`profile-${id}`}
       src={url}
       size={size}
-      style={{
-        viewTransitionName: `profile-${id}`
-      }}
     />
   )
 }

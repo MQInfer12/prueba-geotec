@@ -16,10 +16,10 @@ const UserCard = ({ user }: Props) => {
   const handleGoToUser = () => {
     if(document.startViewTransition) {
       document.startViewTransition(() => {
-        navigate(`/${user.id}?avatar_url=${user.avatar_url}`);
+        navigate(`/${user.id}`);
       })
     } else {
-      navigate(`/${user.id}?avatar_url=${user.avatar_url}`);
+      navigate(`/${user.id}`);
     }
   }
 
