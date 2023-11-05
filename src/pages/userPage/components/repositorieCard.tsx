@@ -43,7 +43,6 @@ const Container = styled.div`
   background-color: ${colors.black};
   border-radius: 16px;
   color: ${colors.white};
-  width: 320px;
   box-shadow: 0px 0px 30px 3px rgba(0,0,0,0.2);
   justify-content: space-between;
   gap: 16px;

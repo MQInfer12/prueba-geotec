@@ -66,7 +66,6 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: 16px;
-    width: 250px;
     align-items: center;
     & > img {
       position: absolute;
@@ -76,6 +75,9 @@ const Container = styled.div`
     }
     & > h2 {
       font-weight: 400;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     & > .buttons {
       display: flex;

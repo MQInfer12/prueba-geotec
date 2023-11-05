@@ -57,16 +57,26 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  width: 100%;
 `;
 
 const DataContainer = styled.div`
   display: flex;
   gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+
   & > div {
+    min-width: 320px;
     display: flex;
     gap: 16px;
     flex-direction: column;
-  justify-content: center;
+    justify-content: center;
+    
+    @media screen and (max-width: 759px) {
+      align-items: center;
+    }
+
     & > h2 {
       font-size: 2.2rem;
       font-weight: 400;

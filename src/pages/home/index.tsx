@@ -41,8 +41,10 @@ export default Index
 
 const CardsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-template-rows: auto;
   gap: 48px;
   column-gap: 32px;
+  width: 1096px;
+  max-width: 100%;
 `;
