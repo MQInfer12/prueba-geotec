@@ -80,6 +80,9 @@ const DataContainer = styled.div`
     & > h2 {
       font-size: 2.2rem;
       font-weight: 400;
+      @media screen and (max-width: 759px) {
+        text-align: center;
+      }
     }
     & > .email {
       opacity: 0.6;

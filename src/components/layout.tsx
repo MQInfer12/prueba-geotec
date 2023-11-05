@@ -1,12 +1,12 @@
-import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { useVTNavigate } from "../hooks/useVTNavigate";
 
 interface Props {
   children: JSX.Element | JSX.Element[] | string
 }
 
 const Layout = ({ children }: Props) => {
-  const navigate = useNavigate();
+  const navigate = useVTNavigate();
 
   const handleHome = () => {
     navigate("/");

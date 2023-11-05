@@ -1,26 +1,20 @@
-import { useNavigate } from "react-router-dom";
 import Button, { ButtonType } from "../../../components/button";
 import ProfileImg from "../../../components/profileImg";
 import { colors } from "../../../constants/colors";
 import { goTo } from "../../../utilities/goTo";
-import { UserData } from "../interfaces/usersResponse"
+import { UserData } from "../interfaces/usersResponse";
 import styled from 'styled-components';
+import { useVTNavigate } from "../../../hooks/useVTNavigate";
 
 interface Props {
   user: UserData
 }
 
 const UserCard = ({ user }: Props) => {
-  const navigate = useNavigate();
+  const navigate = useVTNavigate();
 
   const handleGoToUser = () => {
-    if(document.startViewTransition) {
-      document.startViewTransition(() => {
-        navigate(`/${user.id}`);
-      })
-    } else {
-      navigate(`/${user.id}`);
-    }
+    navigate(`/${user.id}`);
   }
 
   return (

@@ -10,6 +10,10 @@ const Index = () => {
   const [page, setPage] = useState(1);
   const usersData = useGet<UsersResponse>(`users?since=${since}&per_page=32`);
 
+  /**
+   * Se encarga de pasar la página de usuarios a la siguiente
+   * a partir del id del último usuario de la página actual
+   */
   const handleNext = () => {
     if(usersData) {
       setSince(usersData[usersData.length - 1].id);
