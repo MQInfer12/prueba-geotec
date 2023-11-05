@@ -4,13 +4,7 @@ import { http } from "../constants/http";
 export const useGet = <T,>(
   route: string
 ) => {
-  const local = JSON.parse(localStorage.getItem(route) || "null");
-  let expired: boolean = true;
-  if(local) {
-    const now = new Date();
-    expired = (now.getTime() - local.expires) > (1000 * 20)
-  }
-  const [res, setRes] = useState<null | T>(expired ? null : local.data);
+  const [res, setRes] = useState<null | T>(null);
 
   useEffect(() => {
     const getData = async () => {
@@ -37,8 +31,16 @@ export const useGet = <T,>(
       }
     }
     
-    if(!res) {
-      console.log("llamando a la api")
+    const local = JSON.parse(localStorage.getItem(route) || "null");
+    if(local) {
+      const now = new Date();
+      const expired = (now.getTime() - local.expires) > (2 * 60 * 60 * 1000);
+      if(expired) {
+        getData();
+      } else {
+        setRes(local.data);
+      }
+    } else {
       getData();
     }
   }, [route]);

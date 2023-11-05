@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 interface Props {
@@ -5,9 +6,15 @@ interface Props {
 }
 
 const Layout = ({ children }: Props) => {
+  const navigate = useNavigate();
+
+  const handleHome = () => {
+    navigate("/");
+  }
+
   return (
     <Main>
-      <h1>
+      <h1 onClick={handleHome}>
         <i className="fa-brands fa-github"></i>
         GitHub Users
       </h1>
@@ -28,5 +35,6 @@ const Main = styled.main`
     display: flex;
     gap: 16px;
     align-items: center;
+    cursor: pointer;
   }
 `;

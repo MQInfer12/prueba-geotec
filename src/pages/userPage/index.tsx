@@ -5,6 +5,9 @@ import ProfileImg from "../../components/profileImg";
 import styled from "styled-components";
 import Button, { ButtonType } from "../../components/button";
 import { goTo } from "../../utilities/goTo";
+import Repositories from "./components/repositories";
+import { http } from "../../constants/http";
+import { maxRepos } from "../../constants/maxRepos";
 
 const Index = () => {
   const { id } = useParams();
@@ -39,6 +42,10 @@ const Index = () => {
           <p className="email">{userData.followers} seguidores</p>
         </div>
       </DataContainer>
+      <Repositories 
+        url={userData.repos_url.replace(http, "")} 
+        max={Math.ceil(userData.public_repos / maxRepos)}
+      />
     </Container>
   )
 }

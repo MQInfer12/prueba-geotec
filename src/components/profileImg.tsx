@@ -26,6 +26,6 @@ interface ImgProps {
 const Img = styled.img<ImgProps>`
   width: ${props => props.size}px;
   height: ${props => props.size}px;
-  border-radius: 8px;
+  border-radius: 16px;
   border: 4px solid ${colors.white};
 `;

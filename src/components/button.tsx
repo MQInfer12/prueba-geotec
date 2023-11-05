@@ -11,13 +11,15 @@ interface Props {
   onClick: () => any
   type: ButtonType
   icon?: string
+  disabled?: boolean
 }
 
-const Button = ({ children, onClick, type, icon }: Props) => {
+const Button = ({ children, onClick, type, icon, disabled }: Props) => {
   return (
     <StyledButton 
       onClick={onClick}
       type={type}
+      disabled={disabled}
     >
       {children}
       {icon && <i className={icon} />}
@@ -47,5 +49,10 @@ const StyledButton = styled.button<StyledButtonProps>`
 
   &:hover {
     opacity: 0.8;
+  }
+
+  &:disabled {
+    filter: grayscale(1);
+    pointer-events: none;
   }
 `;
