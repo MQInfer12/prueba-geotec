@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { useVTNavigate } from "../hooks/useVTNavigate";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 interface Props {
   children: JSX.Element | JSX.Element[] | string
@@ -7,6 +9,11 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
   const navigate = useVTNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   const handleHome = () => {
     navigate("/");
