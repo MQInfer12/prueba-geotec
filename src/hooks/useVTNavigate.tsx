@@ -12,14 +12,15 @@ export const useVTNavigate = () => {
    * @param {string} to ruta a la cual se navegará
    */
   const navigate = (to: string) => {
+    const base = import.meta.env.BASE_URL;
     if(document.startViewTransition) {
       document.startViewTransition(() => {
         flushSync(() => {
-          nav(to);
+          nav(base + to);
         })
       })
     } else {
-      nav(to);
+      nav(base + to);
     }
   }
 

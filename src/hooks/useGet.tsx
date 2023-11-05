@@ -25,11 +25,11 @@ export const useGet = <T,>(
   route: string
 ) => {
   const [res, setRes] = useState<T | null>(getFromLocalStorage(route));
+  const fullRoute = `${http}${route}`;
 
   useEffect(() => {
     const getData = async () => {
       try {
-        const fullRoute = `${http}${route}`;
         const response = await fetch(fullRoute, {
           headers: {
             "Authorization": "Bearer " + import.meta.env.VITE_GITHUB_TOKEN

@@ -9,12 +9,13 @@ import Layout from "./components/layout"
  * las distintas rutas, en este caso tenemos 2
  */
 function App() {
+  const base = import.meta.env.BASE_URL;
   return (
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/:id" element={<UserPage />} />
+          <Route path={base} element={<Home />} />
+          <Route path={base + ":id"} element={<UserPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>

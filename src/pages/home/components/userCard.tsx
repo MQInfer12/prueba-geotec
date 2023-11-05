@@ -14,7 +14,7 @@ const UserCard = ({ user }: Props) => {
   const navigate = useVTNavigate();
 
   const handleGoToUser = () => {
-    navigate(`/${user.id}`);
+    navigate(`${user.id}`);
   }
 
   return (

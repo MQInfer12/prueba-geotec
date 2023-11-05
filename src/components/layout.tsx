@@ -16,7 +16,7 @@ const Layout = ({ children }: Props) => {
   }, [location]);
 
   const handleHome = () => {
-    navigate("/");
+    navigate("");
   }
 
   return (
