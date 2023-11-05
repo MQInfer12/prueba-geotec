@@ -1,27 +1,39 @@
-# React + TypeScript + Vite
+# Prueba técnica de Geotec
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta aplicación realizada en React lista los usuarios de la API oficial de GitHub, así también sus datos de usuario y sus repositorios.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<ul>
+   <li>Listar los datos de usuarios de GitHub en la página principal</li>
+   <li>Posibilidad de cambiar de página (32 usuarios por página)</li>
+   <li>Enlace para visitar el perfil de GitHub de cada usuario</li>
+   <li>Botón para ver la lista de repositorios de cada usuario</li>
+   <li>Listar datos de cualquier usuario junto con sus repositorios</li>
+   <li>Paginación de repositorios (8 por página)</li>
+   <li>Enlace para visitar cada uno de los repositorios</li>
+   <li>Cache de los datos con duración de 2 horas</li>
+</ul>
 
-## Expanding the ESLint configuration
+## Levantar el proyecto
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Clonar el repositorio, crear un archivo .env con los siguientes datos:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```env
+VITE_GITHUB_TOKEN = "" //token para la API de GitHub
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Realizar los siguientes comandos para instalar las dependencias y levantar el servidor:
+
+```console
+npm install
+npm run dev
+```
+
+Comando para correr los test
+
+```console
+npm run test
+```
+
+## 
